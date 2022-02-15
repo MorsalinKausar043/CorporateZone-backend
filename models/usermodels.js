@@ -6,7 +6,10 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   username: {
     type: String,
-    required: true,
+    trim:true,
+  },
+  companyName: {
+    type: String,
     trim:true,
   },
   email: {
@@ -22,12 +25,27 @@ const userSchema = new Schema({
   },
   photoURL: {
     type:String,
+  },
+  companyWebsite: {
+    type:String,
+  },
+  experienceInHiring: {
+    type:String,
+  },
+  phone:{
+    type: Number,
   }
   ,
+  post: {
+    type:"string"
+  },
   role: {
     type: String,
-    default: "user",
   },
+  location: {
+    type:String,
+  }
+  ,
   tokens: [{
     token: {
       type: String,
