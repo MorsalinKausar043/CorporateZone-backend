@@ -29,7 +29,9 @@ const userSchema = new Schema({
     type:String,
   },
   companyWebsite: {
-    type:String,
+    type: String,
+    minlength: [2, "Invalid Name"],
+    trim:true
   },
   experienceInHiring: {
     type:String,
@@ -51,6 +53,11 @@ const userSchema = new Schema({
   location: {
     type: String,
     trim:true
+  },
+
+  password: {
+    type: String,
+    minlength:[6, "minimum 6 cherecter!"]
   }
   ,
   tokens: [{
@@ -70,7 +77,8 @@ userSchema.methods.getTokenId = async function () {
   try
   {
     const token = await jwt.sign({ _id: this._id.toString() }, process.env.SECRET_KEY);
-    this.tokens = this.tokens.concat({ token })
+    this.tokens = this.tokens.concat({ token });
+    await this.save();
     return token;
     
   } catch (error) {

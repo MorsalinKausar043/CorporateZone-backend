@@ -7,6 +7,7 @@ const {
   updateJob,
   deleteJobById,
 } = require("../controllers/jobControllers");
+const auth = require('../middleware/auth');
 
 // get all jobs
 router.get("/", allJobs);

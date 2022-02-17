@@ -9,7 +9,8 @@ const postUser = async (req, res) => {
     const token = await user.getTokenId();
     res.cookie("jwt", token, {
         expires: new Date(Date.now() + 200000),
-        httpOnly: true
+        httpOnly: true,
+        secure:true
     })
 
     await user.save();
