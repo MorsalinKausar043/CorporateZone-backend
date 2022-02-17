@@ -4,7 +4,7 @@ const { User } = require("../models/userModel");
 const auth = async (req, res, next) => {
     try
     {
-        const token = req.cookies;
+        const token = req.cookies.jwt;
         // const userDataAuth = jwt.verify(token, process.env.SECRET_KEY);
         // const userMatch = await User.findOne({ _id: userDataAuth.id });
 
