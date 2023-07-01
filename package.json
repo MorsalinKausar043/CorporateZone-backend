@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node index.js",
     "start-dev": "nodemon index.js",
@@ -10,14 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nesat-Nayem/CorporateZone-Backend.git"
+    "url": "git+https://github.com/MorsalinKausar043/CorporateZone-backend.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nesat-Nayem/CorporateZone-Backend/issues"
-  },
-  "homepage": "https://github.com/Nesat-Nayem/CorporateZone-Backend#readme",
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
