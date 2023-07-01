@@ -92,7 +92,7 @@ const Jobdetails = ({ data }) => {
       };
       axios
         .post(
-          "https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs",
+          "https://corporate-zone-backend-main.vercel.app/appliedJobs",
           jobData
         )
         .then((response) => {
@@ -183,7 +183,8 @@ const Jobdetails = ({ data }) => {
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
+                allowFullScreen
+              ></iframe>
             </div>
 
             <div className="my-10">
@@ -193,54 +194,65 @@ const Jobdetails = ({ data }) => {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746841.2106474624!2d88.09993645646647!3d23.495622700490763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1644300400443!5m2!1sen!2sbd"
                 height="300"
                 allowFullScreen
-                loading="lazy"></iframe>
+                loading="lazy"
+              ></iframe>
             </div>
             <div className="mt-12 mb-6 flex items-center ml-8">
               <h2 className="text-sm md:text-md font-bold">SHARE:</h2>
               <a
                 className="ml-3 text-sm md:text-lg hover:text-blue-500"
-                href="#">
+                href="#"
+              >
                 <FaFacebookF />
               </a>
               <a
                 className="ml-3 text-sm md:text-lg hover:text-blue-400"
-                href="#">
+                href="#"
+              >
                 <AiOutlineTwitter />
               </a>
               <a
                 className="ml-3 text-sm md:text-lg hover:text-blue-400"
-                href="#">
+                href="#"
+              >
                 <GrLinkedinOption />
               </a>
               <a
                 className="ml-3 text-sm md:text-lg hover:text-red-500"
-                href="#">
+                href="#"
+              >
                 <IoLogoGoogleplus />
               </a>
               <a
                 className="ml-3 text-sm md:text-lg hover:text-red-500"
-                href="#">
+                href="#"
+              >
                 <IoLogoPinterest />
               </a>
             </div>
             <div className=" flex items-center">
               <h2 className="text-md font-bold flex items-center">
                 <AiFillTags className="text-blue-400 text-xl mr-2" />{" "}
-                <span className="text-sm md:text-lg inline-block">Tagged as:</span>
+                <span className="text-sm md:text-lg inline-block">
+                  Tagged as:
+                </span>
               </h2>
               <a
                 className="ml-1 md:ml-3 text-xs md:text-sm text-blue-400"
-                href="#">
+                href="#"
+              >
                 Media,
               </a>
               <a
                 className="ml-1 md:ml-3 text-xs md:text-sm text-blue-400"
-                href="#">
+                href="#"
+              >
                 Medicla,
               </a>
               <a
                 className="ml-1 md:ml-3 text-xs md:text-sm text-blue-400"
-                href="#">
+                href="#"
+              >
                 Restaurants
               </a>
             </div>
@@ -248,7 +260,8 @@ const Jobdetails = ({ data }) => {
 
           <div
             style={{ height: "880px", borderBottom: "2px solid red" }}
-            className="col-span-3 md:col-span-1 bottom-1 border-cyan-100 shadow-md rounded-sm">
+            className="col-span-3 md:col-span-1 bottom-1 border-cyan-100 shadow-md rounded-sm"
+          >
             <div>
               <h2 className={`${Card_title}`}>Job Overview</h2>
               <div className="text-center pt-8 pb-12">
@@ -332,7 +345,8 @@ const Jobdetails = ({ data }) => {
                   <div className="ml-10">
                     <button
                       onClick={applyJob}
-                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-10 md:px-20 rounded tracking-wider">
+                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-4 px-10 md:px-20 rounded tracking-wider"
+                    >
                       APPLY NOW!
                     </button>
 
@@ -359,7 +373,7 @@ export default Jobdetails;
 
 export const getServerSideProps = async (context) => {
   const res = await fetch(
-    `https://corporate-zone-back-end-side-production.up.railway.app/jobs/singleJob/${context.params.id}`
+    `https://corporate-zone-backend-main.vercel.app/jobs/singleJob/${context.params.id}`
   );
   const data = await res.json();
 

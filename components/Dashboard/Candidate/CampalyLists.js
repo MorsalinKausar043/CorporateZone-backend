@@ -4,7 +4,7 @@ const CompanyLists = () => {
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/users")
+    fetch("https://corporate-zone-backend-main.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         const main = data.filter((company) => company.role === "recruiter");

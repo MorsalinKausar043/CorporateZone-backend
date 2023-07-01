@@ -12,7 +12,7 @@ const BadgeShow = () => {
   useEffect(() => {
     axios
       .get(
-        `https://corporate-zone-back-end-side-production.up.railway.app/skill/${loggedInUser?.email}`
+        `https://corporate-zone-backend-main.vercel.app/skill/${loggedInUser?.email}`
       )
       .then(function (response) {
         setResult(response?.data);

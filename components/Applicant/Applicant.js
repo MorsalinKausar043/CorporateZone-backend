@@ -9,7 +9,7 @@ const Applicant = () => {
   const [matchJobs, setMatchJobs] = useState([]);
 
   useEffect(() => {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
+    fetch("https://corporate-zone-backend-main.vercel.app/jobs")
       .then((res) => res.json())
       .then((data) => setPostedJobs(data.data));
   }, []);

@@ -76,7 +76,7 @@ const Quiz = ({ technology, setState }) => {
 
       axios
         .put(
-          `https://corporate-zone-back-end-side-production.up.railway.app/skill/${technology}`,
+          `https://corporate-zone-backend-main.vercel.app/skill/${technology}`,
           {
             email: loggedInUser?.email,
             technology: technology,

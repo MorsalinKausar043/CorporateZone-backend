@@ -10,20 +10,17 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Features from "../Features/Features";
 
-
-const RecentJobs = (props) =>
-{
+const RecentJobs = (props) => {
   const [jobs, setJobs] = useState(props.jobs);
   const [category, setCategory] = useState();
   const [display, setDisplay] = useState([]);
 
   const router = useRouter();
 
-  const filterJobs = async (e) =>
-  {
+  const filterJobs = async (e) => {
     setCategory(e.target.value);
     const response = await fetch(
-      `https://corporate-zone-back-end-side-production.up.railway.app/jobs?jobType=${e.target.value}`
+      `https://corporate-zone-backend-main.vercel.app/jobs?jobType=${e.target.value}`
     );
     const data = await response.json();
     console.log(data.data);
@@ -35,21 +32,17 @@ const RecentJobs = (props) =>
     });
   };
 
-  useEffect(() =>
-  {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
+  useEffect(() => {
+    fetch("https://corporate-zone-backend-main.vercel.app/jobs")
       .then((res) => res.json())
-      .then((data) =>
-      {
+      .then((data) => {
         setJobs(data.data.reverse());
         setDisplay(data.data);
         console.log(data.data);
       });
   }, []);
 
-
-  const handleChange = (event) =>
-  {
+  const handleChange = (event) => {
     const sarchText = event.target.value;
     const matched = jobs.filter((job) =>
       job.jobTitle.toLowerCase().includes(sarchText.toLowerCase())

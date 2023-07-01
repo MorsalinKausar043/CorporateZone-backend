@@ -98,7 +98,7 @@ const JobPost = () => {
     allData.location = value.label;
     allData.jobTags = "Media, Medicla, Restaurants";
     axios
-      .post("https://corporate-zone-back-end-side-production.up.railway.app/jobs", allData)
+      .post("https://corporate-zone-backend-main.vercel.app/jobs", allData)
       .then((res) => {
         if (res.status === 200) {
           router.push("/");
@@ -209,7 +209,8 @@ const JobPost = () => {
                       onChange={dataInput}
                       value={allData.companySize}
                       autoComplete="companySize"
-                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    >
                       <option>Select Company Size</option>
                       <option>10-20 employees</option>
                       <option>20-50 employees</option>
@@ -229,7 +230,8 @@ const JobPost = () => {
                       autoComplete="businessType"
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       onChange={dataInput}
-                      value={allData.businessType}>
+                      value={allData.businessType}
+                    >
                       <option>Select Business Type</option>
                       <option>IT Farm</option>
                       <option>IT Company</option>
@@ -248,7 +250,8 @@ const JobPost = () => {
                       autoComplete="jobType"
                       onChange={dataInput}
                       value={allData.jobType}
-                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    >
                       <option>Select Job Type</option>
                       <option>Internship</option>
                       <option>Part-Time</option>
@@ -266,7 +269,8 @@ const JobPost = () => {
                       autoComplete="salary"
                       className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       onChange={dataInput}
-                      value={allData.salary}>
+                      value={allData.salary}
+                    >
                       <option>Select Salary</option>
                       <option>$24k - $25k</option>
                       <option>$26k - $50k</option>
@@ -297,7 +301,8 @@ const JobPost = () => {
                       autoComplete="experience"
                       onChange={dataInput}
                       value={allData.experience}
-                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    >
                       <option>Select Experience</option>
                       <option>1+ Years Experience</option>
                       <option>2+ Years Experience</option>
@@ -319,7 +324,8 @@ const JobPost = () => {
                           value && (
                             <div
                               key={id}
-                              className="grid grid-cols-6 gap-4 my-3">
+                              className="grid grid-cols-6 gap-4 my-3"
+                            >
                               <p className="my-2 text-sm col-span-5">{value}</p>
                               <a className="bg-white shadow-md flex justify-center items-center rounded-md col-span-1 hover:bg-red-500 hover:text-white">
                                 <AiFillDelete
@@ -347,7 +353,8 @@ const JobPost = () => {
                         />
                         <a
                           className="p-2 bg-white shadow-md flex justify-center items-center rounded-md col-span-1 hover:bg-blue-500 hover:text-white"
-                          onClick={SaveResponsibility}>
+                          onClick={SaveResponsibility}
+                        >
                           <BiMessageSquareAdd className="text-xl font-bold" />
                         </a>
                       </div>
@@ -384,7 +391,8 @@ const JobPost = () => {
                         value={allData.jobDescription}
                         rows="5"
                         className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-2 sm:text-sm border-gray-300 rounded-md"
-                        placeholder="Please Write Job Description"></textarea>
+                        placeholder="Please Write Job Description"
+                      ></textarea>
                     </div>
                   </div>
 
@@ -431,7 +439,8 @@ const JobPost = () => {
                           stroke="currentColor"
                           fill="none"
                           viewBox="0 0 48 48"
-                          aria-hidden="True">
+                          aria-hidden="True"
+                        >
                           <path
                             d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
                             strokeWidth="2"
@@ -462,7 +471,8 @@ const JobPost = () => {
                 <div className="px-4 py-3 bg-gray-50 text-center sm:px-6">
                   <button
                     type="submit"
-                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  >
                     Submit
                   </button>
                 </div>

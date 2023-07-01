@@ -76,7 +76,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     fetch(
-      `https://corporate-zone-back-end-side-production.up.railway.app/users/signleUser/${currentUser?.email}`
+      `https://corporate-zone-backend-main.vercel.app/users/signleUser/${currentUser?.email}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -88,7 +88,7 @@ const useFirebase = () => {
   const saveData = async (data) => {
     try {
       const res = await fetch(
-        "https://corporate-zone-back-end-side-production.up.railway.app/users/register",
+        "https://corporate-zone-backend-main.vercel.app/users/register",
         {
           method: "POST",
           headers: {

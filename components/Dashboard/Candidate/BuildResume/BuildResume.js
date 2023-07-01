@@ -4,25 +4,22 @@ import { saveAs } from "file-saver";
 import InputItem from "./InputItem";
 import { RiDoubleQuotesR } from "react-icons/ri";
 
-const BuildResume = () =>
-{
+const BuildResume = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) =>
-  {
+  const onSubmit = (data) => {
     axios
-      .post("https://corporate-zone-back-end-side-production.up.railway.app/create-pdf", data)
+      .post("https://corporate-zone-backend-main.vercel.app/create-pdf", data)
       .then(() =>
-        axios.get("https://corporate-zone-back-end-side-production.up.railway.app/fetch-pdf", {
+        axios.get("https://corporate-zone-backend-main.vercel.app/fetch-pdf", {
           responseType: "blob",
         })
       )
-      .then((res) =>
-      {
+      .then((res) => {
         const pdfBlob = new Blob([res.data], { type: "application/pdf" });
         saveAs(pdfBlob, `${data.name}.pdf`);
       });
@@ -40,7 +37,9 @@ const BuildResume = () =>
           necessary input.
         </p>
       </div> */}
-      <h1 className="bg-slate-500 text-2xl text-center tracking-widest text-white font-bold rounded-3xl py-2 mb-5 shadow-xl">Build Your Resume</h1>
+      <h1 className="bg-slate-500 text-2xl text-center tracking-widest text-white font-bold rounded-3xl py-2 mb-5 shadow-xl">
+        Build Your Resume
+      </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3">
           <InputItem

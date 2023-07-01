@@ -11,7 +11,7 @@ const PostedJobs = ({ jobs }) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://corporate-zone-back-end-side-production.up.railway.app/jobs`
+        `https://corporate-zone-backend-main.vercel.app/jobs`
       );
       const data = await res.json();
 

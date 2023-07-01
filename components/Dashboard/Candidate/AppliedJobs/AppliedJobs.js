@@ -12,7 +12,7 @@ const AppliedJobs = ({ jobs }) => {
     const fetchData = async () => {
       const data = await (
         await fetch(
-          `https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs?email=${loggedInUser?.email}`
+          `https://corporate-zone-backend-main.vercel.app/appliedJobs?email=${loggedInUser?.email}`
         )
       ).json();
       setMyJobs(data);
@@ -23,9 +23,12 @@ const AppliedJobs = ({ jobs }) => {
   const handleDelete = (id) => {
     const proccess = window.confirm("Are You Sure You Want To Delete");
     if (proccess) {
-      fetch(`https://corporate-zone-back-end-side-production.up.railway.app/appliedJobs/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://corporate-zone-backend-main.vercel.app/appliedJobs/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data._id) {
@@ -36,8 +39,6 @@ const AppliedJobs = ({ jobs }) => {
         });
     }
   };
-
-
 
   // handling error if no jobs found
   if (!myJobs.length) {
@@ -122,7 +123,7 @@ const AppliedJobs = ({ jobs }) => {
                   </td>
                   <td className="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                     <button
-                       onClick={() => handleDelete(job._id)}
+                      onClick={() => handleDelete(job._id)}
                       type="button"
                       className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                     >

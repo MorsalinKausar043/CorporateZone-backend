@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 
-
 SwiperCore.use([Autoplay, EffectCoverflow, Pagination]);
 
 const Features = (props) => {
@@ -16,7 +15,7 @@ const Features = (props) => {
   const router = useRouter();
 
   useEffect(() => {
-    fetch("https://corporate-zone-back-end-side-production.up.railway.app/jobs")
+    fetch("https://corporate-zone-backend-main.vercel.app/jobs")
       .then((res) => res.json())
       .then((data) => {
         setJobs(
@@ -38,11 +37,11 @@ const Features = (props) => {
     window.addEventListener("resize", handleResize);
     window.addEventListener("load", handleResize);
     window.addEventListener("mouseover", handleResize);
-    return () =>{ 
+    return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("load", handleResize);
       window.removeEventListener("mouseover", handleResize);
-  }
+    };
   }, []);
 
   return (
@@ -66,12 +65,14 @@ const Features = (props) => {
           slidesPerView={`${widths < 580 ? 1 : 2}`}
           centeredSlides
           className="lg:w-9/12 md:w-11/12 mx-auto h-full"
-          style={{ height: "350px" }}>
+          style={{ height: "350px" }}
+        >
           {jobs?.map((job) => {
             return (
               <SwiperSlide
                 key={job._id}
-                className=" bg-cover flex flex-col items-center justify-center bg-slate-100 bg-center rounded-md shadow-md relative">
+                className=" bg-cover flex flex-col items-center justify-center bg-slate-100 bg-center rounded-md shadow-md relative"
+              >
                 <img
                   className="block w-32 h-32 mx-auto "
                   src={job.companyLogo}
@@ -94,12 +95,14 @@ const Features = (props) => {
                   <div className="flex flex-col space-y-3">
                     <button
                       className="bg-[#42C2FF] font-medium text-gray-50 px-3 rounded-md"
-                      onClick={() => router.push(`jobs/${job._id}`)}>
+                      onClick={() => router.push(`jobs/${job._id}`)}
+                    >
                       APPLY
                     </button>
                     <button
                       className="bg-[#2a4a57] text-gray-50 font-medium px-3 rounded-md"
-                      onClick={() => router.push("/jobs")}>
+                      onClick={() => router.push("/jobs")}
+                    >
                       See All
                     </button>
                   </div>

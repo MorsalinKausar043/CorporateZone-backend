@@ -12,7 +12,7 @@ const Chats = ({ selectedChat, setSelectedChat, loggedInUser, users }) => {
     };
 
     const { data } = await axios.post(
-      "https://corporate-zone-back-end-side-production.up.railway.app/chats",
+      "https://corporate-zone-backend-main.vercel.app/chats",
       doc
     );
     setSelectedChat(data);
