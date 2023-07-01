@@ -63,7 +63,7 @@ const jobSchema = new Schema({
     require: true,
   },
   since: {
-    type: Number,
+    type: Date,
     require: true,
   },
   lastDate: {

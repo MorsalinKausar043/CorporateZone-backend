@@ -20,7 +20,7 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use("/users", users);
 app.use("/jobs", jobs);
 app.use("/login", login);

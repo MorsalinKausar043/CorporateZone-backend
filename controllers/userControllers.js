@@ -3,21 +3,18 @@ const { User } = require("../models/userModel");
 
 // create a new user
 const postUser = async (req, res) => {
-  try
-  {
+  try {
     const user = new User(req.body);
     const token = await user.getTokenId();
     res.cookie("jwt", token, {
-        expires: new Date(Date.now() + 200000),
-        httpOnly: true,
-        secure:true
-    })
+      expires: new Date(Date.now() + 200000),
+      httpOnly: true,
+      secure: true,
+    });
 
     await user.save();
-    res.status(201).json({ massage: "save successfull!" }); 
-    
-  } catch (err)
-  {
+    res.status(201).json({ massage: "save successfull!" });
+  } catch (err) {
     res.status(500).json(err.message);
   }
 };
@@ -32,7 +29,7 @@ const allUsers = async (req, res) => {
   }
 };
 
-// delete user 
+// delete user
 
 const deleteUsers = async (req, res) => {
   try {
